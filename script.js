@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Modal untuk foto profil
   const profileBtn = document.getElementById("profileBtn");
   const imgModal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
@@ -44,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     profileBtn.addEventListener("click", () => {
-      // jika ingin menampilkan gambar yang berbeda di modal, ubah src di sini
       if (modalImg && profileBtn.querySelector("img")) {
         modalImg.src = profileBtn.querySelector("img").src;
       }
@@ -53,12 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     modalClose && modalClose.addEventListener("click", closeModal);
 
-    // Tutup saat klik di luar konten
     imgModal.addEventListener("click", (e) => {
       if (e.target === imgModal) closeModal();
     });
 
-    // Tutup dengan ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeModal();
     });

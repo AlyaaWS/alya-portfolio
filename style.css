@@ -131,7 +131,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* Tombol Global */
 .btn-group {
   display: flex;
   gap: 16px;
@@ -316,9 +315,9 @@ body {
 
 .project-img {
   width: 100%;
-  height: 240px; /* Tingginya disesuaikan biar proporsional sama lebarnya */
-  object-fit: cover; /* Biar gambarnya full memenuhi area atas kartu */
-  object-position: top; /* Biar bagian atas (logo/navbar) tetap aman nggak kepotong */
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
   transition: transform 0.5s;
 }
 
@@ -340,15 +339,14 @@ body {
   flex-grow: 1;
 }
 
-/* --- LINK WEBSITE DI KARTU PROYEK --- */
 .project-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff; /* Mengubah warna teks menjadi putih murni */
+  color: #ffffff;
   font-size: 0.95rem;
   font-weight: 600;
-  text-decoration: none; /* Memastikan tidak ada garis bawah (underline) */
+  text-decoration: none;
   transition: all 0.3s ease;
   margin-top: auto;
 }
@@ -358,14 +356,12 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Efek saat link disorot kursor */
 .project-link:hover {
   color: var(
     --cyan
-  ); /* Teks berubah jadi cyan cerah saat disentuh kursor agar interaktif */
+  );
 }
 
-/* Animasi ikon panah melompat kecil */
 .project-link:hover i {
   transform: translate(3px, -3px);
 }
@@ -380,7 +376,7 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   position: absolute;
-  z-index: 99; /* <--- Ubah ini jadi 99 */
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -459,14 +455,10 @@ body {
   margin-top: 24px;
 }
 
-/* ==========================================================
-   ANIMASI LOGO BERJALAN (MARQUEE)
-========================================================== */
-/* Pengaturan area slider (didekatkan ke card) */
 .tech-slider {
-  margin-top: 30px; /* Awalnya 80px, dikecilkan agar lebih dekat dengan card */
+  margin-top: 30px;
   overflow: hidden;
-  padding: 15px 0; /* Awalnya 30px, area kotaknya dibuat lebih ramping */
+  padding: 15px 0;
   position: relative;
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -474,7 +466,6 @@ body {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* Memberikan efek pudar (fade) transparan di ujung kanan dan kiri */
 .tech-slider::before,
 .tech-slider::after {
   content: "";
@@ -499,16 +490,13 @@ body {
   display: flex;
   width: max-content;
   align-items: center;
-  /* Animasi bergerak ke Kanan selama 25 detik tanpa henti */
   animation: scrollRight 25s linear infinite;
 }
 
-/* Saat cursor diarahkan, animasinya berhenti sebentar agar mudah dilihat */
 .tech-slider:hover .tech-track {
   animation-play-state: paused;
 }
 
-/* Keyframes bergerak dari Kiri (minus) ke Kanan (nol) */
 @keyframes scrollRight {
   0% {
     transform: translateX(-50%);
@@ -518,22 +506,19 @@ body {
   }
 }
 
-/* Pengaturan bentuk dan ukuran logo (dikecilkan) */
 .tech-track img {
-  height: 35px; /* Awalnya 55px, sekarang logonya jadi lebih kecil dan manis */
-  margin: 0 30px; /* Jarak antar logo juga dirapatkan sedikit (awalnya 40px) */
+  height: 35px;
+  margin: 0 30px;
   object-fit: contain;
   filter: grayscale(100%) opacity(0.5);
   transition: all 0.4s ease;
   cursor: pointer;
 }
 
-/* Khusus logo GitHub (karena aslinya hitam, kita jadikan putih di dark mode) */
 .tech-track img.github-icon {
   filter: invert(1) grayscale(100%) opacity(0.5);
 }
 
-/* Saat logo disorot mouse: Warna aslinya menyala dan membesar sedikit */
 .tech-track img:hover {
   filter: grayscale(0%) opacity(1);
   transform: scale(1.15);
@@ -543,7 +528,6 @@ body {
   filter: invert(1) grayscale(0%) opacity(1);
 }
 
-/* Gaya untuk tombol foto profil (hilangkan gaya default button) */
 .profile-btn {
   background: transparent;
   border: none;
@@ -552,7 +536,6 @@ body {
   cursor: pointer;
 }
 
-/* Modal untuk menampilkan gambar profil yang diperbesar */
 .img-modal {
   position: fixed;
   inset: 0;
@@ -573,7 +556,6 @@ body {
 }
 .img-modal-content {
   position: relative;
-  /* Batasi ukuran konten modal agar gambar lebih kecil */
   max-width: 600px;
   max-height: 80vh;
   padding: 8px;
@@ -604,7 +586,6 @@ body {
   box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
 }
 
-/* Style Back to Top */
 .back-to-top {
     position: fixed;
     bottom: 30px;
