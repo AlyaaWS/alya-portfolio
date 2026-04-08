@@ -1,0 +1,669 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-main: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.5);
+  --text-light: #f1f5f9;
+  --text-muted: #94a3b8;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --cyan: #06b6d4;
+  --border: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  padding: 20px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.hero {
+  padding-top: 150px;
+  padding-bottom: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(to top right, var(--primary), var(--cyan));
+  padding: 4px;
+  margin-bottom: 24px;
+  animation: float 4s ease-in-out infinite; /* Efek Floating */
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3); /* Cahaya Glowing */
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--bg-main);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.highlight {
+  background: linear-gradient(to right, #818cf8, #22d3ee);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+}
+
+/* Tombol Global */
+.btn-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+}
+
+.mt-4 {
+  margin-top: 24px;
+  display: inline-block;
+}
+
+.section {
+  padding: 80px 0;
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.3s;
+}
+
+.card:hover {
+  border-color: var(--primary);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.timeline {
+  border-left: 2px solid var(--border);
+  padding-left: 24px;
+  margin-left: 12px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary);
+  border: 4px solid var(--bg-main);
+  border-radius: 50%;
+}
+
+.timeline-cyan::before {
+  background-color: var(--cyan);
+}
+
+.timeline-date {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 4px 0 8px;
+}
+
+.cyan-text {
+  color: var(--cyan);
+}
+
+.timeline-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.project-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.project-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(50% - 12px);
+  min-width: 280px;
+  scroll-snap-align: start;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+  border-color: var(--primary);
+}
+
+.project-img {
+  width: 100%;
+  height: 240px; /* Tingginya disesuaikan biar proporsional sama lebarnya */
+  object-fit: cover; /* Biar gambarnya full memenuhi area atas kartu */
+  object-position: top; /* Biar bagian atas (logo/navbar) tetap aman nggak kepotong */
+  transition: transform 0.5s;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* --- LINK WEBSITE DI KARTU PROYEK --- */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff; /* Mengubah warna teks menjadi putih murni */
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none; /* Memastikan tidak ada garis bawah (underline) */
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.project-link i {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+/* Efek saat link disorot kursor */
+.project-link:hover {
+  color: var(
+    --cyan
+  ); /* Teks berubah jadi cyan cerah saat disentuh kursor agar interaktif */
+}
+
+/* Animasi ikon panah melompat kecil */
+.project-link:hover i {
+  transform: translate(3px, -3px);
+}
+
+.slider-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99; /* <--- Ubah ini jadi 99 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.slider-btn:hover {
+  background-color: var(--cyan);
+  transform: scale(1.1);
+}
+
+.prev-btn {
+  left: -22px;
+}
+.next-btn {
+  right: -22px;
+}
+
+.footer {
+  background-color: #0b1120;
+  padding: 80px 0 40px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.footer p {
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.social-links {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.social-btn i {
+  font-size: 1.4rem;
+}
+
+.social-btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+.copyright {
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+/* ==========================================================
+   ANIMASI LOGO BERJALAN (MARQUEE)
+========================================================== */
+/* Pengaturan area slider (didekatkan ke card) */
+.tech-slider {
+  margin-top: 30px; /* Awalnya 80px, dikecilkan agar lebih dekat dengan card */
+  overflow: hidden;
+  padding: 15px 0; /* Awalnya 30px, area kotaknya dibuat lebih ramping */
+  position: relative;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Memberikan efek pudar (fade) transparan di ujung kanan dan kiri */
+.tech-slider::before,
+.tech-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+}
+
+.tech-slider::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-main) 0%, transparent 100%);
+}
+
+.tech-slider::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-main) 0%, transparent 100%);
+}
+
+.tech-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  /* Animasi bergerak ke Kanan selama 25 detik tanpa henti */
+  animation: scrollRight 25s linear infinite;
+}
+
+/* Saat cursor diarahkan, animasinya berhenti sebentar agar mudah dilihat */
+.tech-slider:hover .tech-track {
+  animation-play-state: paused;
+}
+
+/* Keyframes bergerak dari Kiri (minus) ke Kanan (nol) */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pengaturan bentuk dan ukuran logo (dikecilkan) */
+.tech-track img {
+  height: 35px; /* Awalnya 55px, sekarang logonya jadi lebih kecil dan manis */
+  margin: 0 30px; /* Jarak antar logo juga dirapatkan sedikit (awalnya 40px) */
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.5);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Khusus logo GitHub (karena aslinya hitam, kita jadikan putih di dark mode) */
+.tech-track img.github-icon {
+  filter: invert(1) grayscale(100%) opacity(0.5);
+}
+
+/* Saat logo disorot mouse: Warna aslinya menyala dan membesar sedikit */
+.tech-track img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.15);
+}
+
+.tech-track img.github-icon:hover {
+  filter: invert(1) grayscale(0%) opacity(1);
+}
+
+/* Gaya untuk tombol foto profil (hilangkan gaya default button) */
+.profile-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Modal untuk menampilkan gambar profil yang diperbesar */
+.img-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 200ms ease,
+    visibility 200ms ease;
+  z-index: 200;
+}
+.img-modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+.img-modal-content {
+  position: relative;
+  /* Batasi ukuran konten modal agar gambar lebih kecil */
+  max-width: 600px;
+  max-height: 80vh;
+  padding: 8px;
+}
+.img-modal-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(80vh - 20px);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+.img-modal-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+/* Style Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    /* Mulai dengan tersembunyi */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--cyan);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+  }
+
+  .slider-btn {
+    display: none;
+  }
+}
