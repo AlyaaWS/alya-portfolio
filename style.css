@@ -55,6 +55,11 @@ body {
   text-decoration: none;
 }
 
+/* Sembunyikan tombol toggle di tampilan desktop; tampilkan hanya di media query mobile */
+.nav-toggle {
+  display: none;
+}
+
 .logo span {
   color: var(--primary);
 }
